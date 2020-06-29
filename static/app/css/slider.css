@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.clear {
+	margin-top: -1px;
+	height: 1px;
+	clear:both;
+	zoom: 1;
+}		
+/* Slider */
+.slider {
+	width: 900px;
+	margin: 0 auto 50px auto;
+	padding: 0 30px 30px 0;
+	position: relative;
+	overflow: hidden;
+    border-bottom: 5px dotted #300100;
+}
+.slider::-moz-selection { background: transparent; color: #fff; text-shadow: none; }
+.slider::selection { background: transparent; color: #fff; text-shadow: none; }
+
+.slide-list {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.slide-wrap {
+	position: relative;
+	left: 0px;
+	top: 0;
+	width: 10000000px;
+}
+.slide-item {
+	width: 280px;
+	padding: 0 15px;
+	float: left;
+}
+.slide-title {
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+.navy {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 100%;
+	width: 30px;
+	cursor: pointer;
+}
+.prev-slide {
+    height: 187px;
+	left: 0;
+}
+.next-slide {
+    height: 187px;
+	right: 0;
+}
+.navy.disable {
+	background: #dbdbdb;
+}

@@ -1,0 +1,83 @@
+#menu_pop {
+ margin: 120px auto ;
+ width: 280px;
+ background: url('wood.jpg');
+ border-radius: 6px;
+ padding: 7px;
+ box-shadow:  0px 1px 5px #000;
+}
+
+#accordion {
+ list-style: none;
+ padding: 0px;
+ margin: 0px;
+}
+
+#accordion .button_podtext {
+ font-size: 9px;
+ color: #b1b1b1;
+}
+
+#accordion div {
+ display: block;
+ cursor: pointer;
+ text-decoration: none;
+ display: block;
+ padding: 8px 0px 8px 11px;
+ background: #000;
+ color: #fff;
+ font-size: 12px;
+ font-family: tahoma;
+ background: url('bg.png') 0px 0px;
+ text-shadow: 0px 1px 0px rgba( 0, 0, 0, 0.6);
+ list-style: circle;
+}
+
+#accordion div:hover {
+ background: url('bg.png') 0px -44px;
+}
+
+.first {
+ border-radius: 3px 3px 0px 0px;
+}
+
+#accordion ul a {
+ color: #777;
+}
+
+#accordion ul {
+ list-style: none;
+ padding: 5px;
+ font-size: 10px;
+ font-family: Tahoma;
+ background: #1a1a1a;
+ box-shadow: inset 0px 3px 6px rgba( 0, 0, 0, 0.7);
+ display: none;
+}
+
+#accordion ul li {
+ font-weight: normal;
+ cursor: auto;
+ padding: 3px 7px;
+}
+
+#accordion a {
+ text-decoration: none;
+}
+
+#accordion a:hover {
+ text-decoration: underline;
+}
+
+#menu_pop .menu_bottom {
+ display: block;
+ padding: 3px 6px 3px;
+ background: #000;
+ color: #fff;
+ font-size: 9px;
+ border-radius: 0px 0px 3px 3px;
+ font-family: georgia;
+ background: url('bg_bottom.png') 0px 0px;
+ text-align: right;
+ text-shadow: 0px 1px 0px rgba( 0, 0, 0, 0.6);
+}

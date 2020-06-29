@@ -1,0 +1,78 @@
+{% extends "app/layout.html" %} 
+{% block content %} 
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<div class="container">
+    <h1 align="center" class="head">Новинки</h1>
+    <div class="slider">
+        <div class="slide-list">
+            <div class="slide-wrap">
+                {% for slid in slider %}
+                <div class="slide-item">
+                    <a href="#win{{slid.id}}" id="win_pop" class="decoration2">
+                        <img width="280" height="187" src="{{STATIC_PREFIX}}{{slid.picture}}" />
+                        <p class="slide-title">{{slid.name}}</p>
+                    </a>
+                    <a href="#x" class="overlay" id="win{{slid.id}}"></a>
+                    <div class="popup">
+                        <img src="{{STATIC_PREFIX}}{{slid.picture}}" width="100%" height="100%" />
+                        <div class="contacts">
+                            <h3>{{slid.name}}</h3>
+                            <p>{{slid.info}}</p>
+                            <p>{{slid.godnost}}</p>
+                        </div>
+                        <a class="close" title="Закрыть" href="#close"></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="navy prev-slide"></div>
+        <div class="navy next-slide"></div>
+        </div>
+        <div class="production">
+            <h1><a href="{% url 'products' %}" class="decoration2">Продукция:</a></h1>
+            <ul>
+                {% for sect in section %}
+                <li><a class='decoration2' href="{% url 'ordering' sect.id %}">{{sect.s_name}}</a><br/></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="group">
+            {% for product in products %}
+            <div class="single-pen">
+                <a href="#win{{product.id}}" id="win_pop" class="decoration2">
+                    <img src="{{STATIC_PREFIX}}{{product.picture}}" class="products">
+                    <div class="meta">
+                        <p>{{product.name}}</p>
+                    </div>
+                </a>
+                <a href="#x" class="overlay" id="win{{product.id}}"></a>
+                <div class="popup">
+                    <img src="{{STATIC_PREFIX}}{{product.picture}}" width="100%" height="100%" />
+                    <div class="contacts">
+                        <h3>{{product.name}}</h3>
+                        <p>{{product.info}}</p>
+                        <p>{{product.godnost}}</p>
+                    </div>
+                    <a class="close" title="Закрыть" href="#close"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="step_links">
+                {% if products.has_previous %}
+                    <a href="?spage={{products.previous_page_number}}">пред.</a>
+                {% endif %}
+                <span class="current">
+                    Страница {{products.number}} из {{products.paginator.num_pages}}.
+                </span>
+                {% if products.has_next %}
+                    <a href="?page={{products.next_page_number}}">след.</a>
+                {% endif %}
+            </span> 
+        </div>
+    </div>
+    {% endblock content %}
